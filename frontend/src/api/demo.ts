@@ -2,6 +2,8 @@
 // Mirrors the success payloads of backend/app/routers so forms show their real confirmation.
 // Nothing is sent or stored anywhere.
 
+import { estimateSavings, type SavingsInput } from "../lib/savings";
+
 type Payload = Readonly<Record<string, unknown>>;
 type Handler = (p: Payload) => unknown;
 
@@ -15,6 +17,8 @@ const firstName = (p: Payload, key = "name"): string => text(p, key).split(/\s+/
 
 const HANDLERS: Readonly<Record<string, Handler>> = {
   "/api/quotes": (p) => ({ id: demoId(), message: `Danke, ${firstName(p)}! Eine Solarberaterin oder ein Solarberater ruft Sie innerhalb von 24 Stunden an.` }),
+  // Same formula as the backend, so the calculator gets a full result instead of a confirmation message.
+  "/api/savings/estimate": (p) => estimateSavings(p as unknown as SavingsInput),
 };
 
 const FALLBACK_MESSAGE = "Vielen Dank! Ihre Anfrage ist eingegangen.";

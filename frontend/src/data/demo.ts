@@ -41,7 +41,7 @@ export const DEMO_PROJECTS: Project[] = [
 export const DEMO_STATS: Stats = { homes_powered: 12480, mw_installed: 186, tons_co2_saved: 94200, rating: 4.9 };
 
 export const CONTACT = {
-  phone: "+49 89 4520 1420",
+  phone: "Ihre Telefonnummer hier",
   email: "hallo@heliogrid.example",
-  address: "Sonnenallee 40, 80331 München",
+  address: "Ihre Adresse hier",
 };

@@ -108,11 +108,11 @@ export default function Quote() {
                   <p className="mt-1 text-sm text-mist">Alle Felder außer „Anmerkungen“ sind Pflichtfelder.</p>
                 </div>
                 <TextField label="Vor- und Nachname" name="name" autoComplete="name" value={values.name} onChange={set("name")} error={errors.name} maxLength={80} placeholder="Jonas Weber" />
-                <TextField label="E-Mail" name="email" type="email" autoComplete="email" value={values.email} onChange={set("email")} error={errors.email} maxLength={120} placeholder="sie@beispiel.de" />
-                <TextField label="Telefon" name="phone" type="tel" autoComplete="tel" value={values.phone} onChange={set("phone")} error={errors.phone} maxLength={20} placeholder="+49 89 1234 5678" />
+                <TextField label="E-Mail" name="email" type="email" autoComplete="email" value={values.email} onChange={set("email")} error={errors.email} maxLength={120} placeholder="ihre@email.example" />
+                <TextField label="Telefon" name="phone" type="tel" autoComplete="tel" value={values.phone} onChange={set("phone")} error={errors.phone} maxLength={20} placeholder="Ihre Telefonnummer" />
                 <TextField label="Monatliche Stromkosten (€)" name="monthly_bill" type="number" inputMode="numeric" min={20} max={5000} value={values.monthly_bill} onChange={set("monthly_bill")} error={errors.monthly_bill} placeholder="100" />
                 <div className="sm:col-span-2">
-                  <TextField label="Adresse der Immobilie" name="address" autoComplete="street-address" value={values.address} onChange={set("address")} error={errors.address} maxLength={160} placeholder="Sonnenstraße 12, 80331 München" />
+                  <TextField label="Adresse der Immobilie" name="address" autoComplete="street-address" value={values.address} onChange={set("address")} error={errors.address} maxLength={160} placeholder="Straße, Hausnummer, PLZ Ort" />
                 </div>
                 <div className="sm:col-span-2">
                   <SelectField label="Objektart" name="property_type" value={values.property_type} onChange={set("property_type")}>
